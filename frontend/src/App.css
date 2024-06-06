@@ -1,0 +1,246 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+/* nav-bar styles */
+nav {
+  height: 30px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 36px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+.contacts-title{
+ color: #2C90B2;
+}
+
+
+/* SearchBar Styles */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border: 2px solid #2C90B2;
+  border-radius: 25px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+
+}
+.search-bar input{
+  margin-right: 10px;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+}
+.search-icon{
+  margin-right: 10px;
+  color: #2C90B2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+}
+
+.add-button{
+  display: flex;
+  align-items: center;
+  background-color: #2C90B2;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  
+}
+.add-button i{
+  margin-right: 5px;
+}
+.add-button:hover{
+  background-color: #4682b4;
+}
+
+
+
+/* ContactList Styles */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-item {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  text-align: left;
+  position: relative;
+}
+
+.contact-item h3 {
+  margin: 0;
+  color: #4682b4;
+}
+
+.contact-item p {
+  margin: 5px 0 20px 0;
+  color: #666;
+}
+
+.contact-item button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+}
+
+.contact-item button.edit-button {
+  right: 50px;
+  color: #fbbd08;
+}
+
+.contact-item button.delete-button {
+  right: 20px;
+  color: #d9534f;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form input[type="email"] {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form div{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  
+}
+
+form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #2C90B2;
+  color: white;
+  margin: 5px 20px;
+  
+}
+
+form button:hover{
+  color: #2c90b2;
+}
+
+
+/* contact details */
+
+.contacts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 40px;
+}
+
+.contact-card {
+  flex-basis: 225px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+  padding-bottom: 20px;
+  background-color: white;
+}
+.contact-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.three-dots-icon {
+  cursor: pointer;
+}
+.options-dropdown {
+  position: relative;
+  top: 1rem;
+  right: -0.5rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.options-dropdown p {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.options-dropdown p:hover {
+  background-color: #f0f0f0;
+}
+
+.contact-card-header > img {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.contact-card > h3 {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.info-group {
+  display: flex;
+  align-items: center;
+}
+
+.info-group > img {
+  height: 15px;
+
+  margin-right: 8px;
+}
+
+.info-group > p {
+  margin-block: 3px;
+  font-size: 12px;
+  color: #2B283A;
+}
