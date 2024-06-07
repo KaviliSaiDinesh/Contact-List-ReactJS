@@ -1,0 +1,37 @@
+{
+  "contacts": [
+    {
+      "id": "1279",
+      "name": "Sai Dinesh",
+      "email": "kavilisaidinesh@gmail.com",
+      "mobile": "6304720562",
+      "designation": "Project Intern",
+      "company": "EmbedUR",
+      "imgurl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOuxrvcNMfGLh73uKP1QqYpKoCB0JLXiBMvA&s"
+    },
+    {
+      "id": "1280",
+      "name": "Sharath",
+      "email": "sharath@gmail.com",
+      "mobile": "9949129582",
+      "designation": "HR",
+      "company": "EmbedUR"
+    },
+    {
+      "id": "6103",
+      "name": "Sai Poornesh",
+      "mobile": "7075516684",
+      "designation": "Cyber Security Analyst",
+      "company": "TCS",
+      "email": "kavilisaipoornesh@gmail.com"
+    },
+    {
+      "id": "f857",
+      "name": "Gurunadham",
+      "mobile": "6301567894",
+      "designation": "Data Analyst",
+      "company": "Embed UR",
+      "email": "gurunadham@gmail.com"
+    }
+  ]
+}
