@@ -7,12 +7,13 @@ import AddContact from './components/AddContact';
 import EditContact from './components/EditContact';
 import ViewContact from './components/ViewContact';
 import ContactList from './components/ContactList';
+import { SearchProvider } from './SearchContext';
 
 
 
 function App() {
   return (
-
+      <SearchProvider>
       <div className="App">
         <Navbar />
         <Routes>
@@ -23,6 +24,7 @@ function App() {
           <Route path={'/contacts/view/:contactId'} element={<ViewContact />} />
         </Routes>
       </div>
+      </SearchProvider>
 
   );
 }
