@@ -29,7 +29,7 @@ export default function ContactCard(props) {
       };
 
     return (
-        <div className="contact-card" >
+        <div className="contact-card-list" >
             <div className="contact-card-header">
             {/* <img src={props.img} alt={`${props.name}`} /> */}
             <FontAwesomeIcon

@@ -28,9 +28,33 @@ export default function AddContact() {
     })
   };
   let {loading, contact, errorMessage} = state;
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateMobile = (mobile) => {
+    const mobileRegex = /^\d{10}$/;
+    return mobileRegex.test(mobile);
+  };
   const handleSubmit = async (event) => {
     
     event.preventDefault();
+    if (!validateEmail(contact.email)) {
+      setState({
+        ...state,
+        errorMessage: 'Invalid email address'
+      });
+      return;
+    }
+
+    if (!validateMobile(contact.mobile)) {
+      setState({
+        ...state,
+        errorMessage: 'Mobile number must be 10 digits'
+      });
+      return;
+    }
     try
     {
         let response = await ContactService.createContact(state.contact);
@@ -65,6 +89,7 @@ export default function AddContact() {
         <input type="text" name = "designation" value = {contact.designation} onChange={upateInput} placeholder="Designation" />
         <input type="text" name = "company" value = {contact.company} onChange={upateInput} placeholder="Company"  />
         <input type="email" name = "email" value = {contact.email} onChange={upateInput} placeholder="Email" required />
+        {errorMessage && <div style={{ color: 'red' }}>{errorMessage}</div>}
         <div>
         <button type="submit">Submit</button>
         <button onClick={onCancel}>Cancel</button>

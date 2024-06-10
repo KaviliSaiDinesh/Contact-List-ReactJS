@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams} from "react-router-dom";
 import { ContactService } from "../services/ContactService";
 import Spinner from "./Spinner";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+
 
 
 export default function ViewContact()
 {
     let {contactId} = useParams();
-    const [showOptions, setShowOptions] = useState(false);
     const navigate = useNavigate();
     const handleEdit = () => {
         navigate(`/contacts/edit/${contactId}`);
@@ -73,38 +71,31 @@ export default function ViewContact()
     return(
         <React.Fragment>
 
-            <div className="contact-card">
+            <div className="view-contact">
+            <h2>Contact Details</h2>
                 { loading ? <Spinner /> : 
                 <React.Fragment>
                 {Object.keys(contact).length > 0 && 
                     
-                <div className="contact-details">
+                <div className="contact-card">
                 {/* <img src={contact.imageUrl} alt={contact.name} className="contact-image" /> */}
-                        <div className="contact-card-header">
-                    
-                    <FontAwesomeIcon
-                    icon={faEllipsisV}
-                    className="three-dots-icon"
-                    onClick={() => setShowOptions(!showOptions)}
-                    />
-                    {showOptions && (
-                    <div className="options-dropdown">
-                        <p onClick={handleEdit}>Edit</p>
-                        <p onClick={() => handleDelete(contact.id)}>Delete</p>
-                    </div>
-                    )}
-                </div>
+                
                 <h2>{contact.name}</h2>
                 <p><strong>Mobile:</strong> {contact.mobile}</p>
                 <p><strong>Designation:</strong> {contact.designation}</p>
                 <p><strong>Company:</strong> {contact.company}</p>
                 <p><strong>Email:</strong> {contact.email}</p>
                 </div>}
-                </React.Fragment>}
-
-            
-        </div>
+                </React.Fragment>}  
+                  
+            </div>
+            <div className="button-group">
+            <button className="edit-button" onClick={handleEdit}>Edit</button>
+            <button className="delete-button" onClick={() =>handleDelete(contactId)}>Delete</button>
             <button className="back-button" onClick={onCancel}>Back</button>
+
+            </div>
+            
         </React.Fragment>
     )
 }

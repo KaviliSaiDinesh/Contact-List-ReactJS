@@ -9,22 +9,22 @@ body {
 .App {
   text-align: center;
 }
-
 /* nav-bar styles */
 nav {
   height: 30px;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 36px;
   margin-bottom: 20px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
 }
-.contacts-title{
- color: #2C90B2;
+
+.contacts-title {
+  color: #2C90B2;
 }
 
-.spinner{
+.spinner {
   align-items: center;
   justify-content: center;
   color: rgba(0, 0, 0, 0.1);
@@ -32,12 +32,9 @@ nav {
   margin-top: 35%;
   background-color: white;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-
 }
 
-
 /* SearchBar Styles */
-
 .search-bar {
   display: flex;
   align-items: center;
@@ -46,9 +43,9 @@ nav {
   border: 2px solid #2C90B2;
   border-radius: 25px;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-
 }
-.search-bar input{
+
+.search-bar input {
   margin-right: 10px;
   width: 100%;
   font-size: 16px;
@@ -57,17 +54,17 @@ nav {
   outline: none;
   border-radius: 25px;
 }
-.search-icon{
+
+.search-icon {
   margin-right: 10px;
   color: #2C90B2;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-
 }
 
-.add-button{
+.add-button {
   display: flex;
   align-items: center;
   background-color: #2C90B2;
@@ -77,15 +74,38 @@ nav {
   padding: 10px 20px;
   font-size: 15px;
   cursor: pointer;
-  
 }
-.add-button i{
+
+.add-button i {
   margin-right: 5px;
 }
-.add-button:hover{
+
+.add-button:hover {
   background-color: #4682b4;
 }
 
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .contacts-title {
+    margin-bottom: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 
 /* ContactList Styles */
@@ -190,7 +210,7 @@ form button:hover{
   gap: 40px;
 }
 
-.contact-card {
+.contact-card-list {
   flex-basis: 225px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -243,7 +263,7 @@ form button:hover{
   object-fit: cover;
 }
 
-.contact-card > h3 {
+.contact-card-list > h3 {
   font-weight: 700;
   font-size: 18px;
 }
@@ -265,13 +285,75 @@ form button:hover{
   color: #2B283A;
 }
 
-.back-button{
+/* view Contact styles */
+.view-contact {
+  padding: 20px;
+}
+
+.contact-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-button,
+.delete-button,
+.back-button {
   padding: 10px 20px;
-  font-size: 16px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  font-size: 15px;
+}
+
+.edit-button {
   background-color: #2C90B2;
   color: white;
-  margin: 5px 20px;
 }
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+}
+
+.back-button {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #4682b4;
+}
+
+.delete-button:hover {
+  background-color: #c9302c;
+}
+
+.back-button:hover {
+  background-color: #31b0d5;
+}
+
+/* @media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .edit-button,
+  .delete-button,
+  .back-button {
+    width: 50%;
+    text-align: center;
+  }
+} */
