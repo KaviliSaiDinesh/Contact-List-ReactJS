@@ -1,19 +1,31 @@
-
 version: '3.8'
 
 services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: saidinesh
+      POSTGRES_DB: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./backend-postgre
+    ports:
+      - "9000:9000"
+    environment:
+      DATABASE_URL: postgres://postgres:saidinesh@db:5432/postgres
+    depends_on:
+      - db
+
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    build: ./frontend
     ports:
       - "3000:3000"
     depends_on:
       - backend
 
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "9000:9000"
+volumes:
+  db_data:
